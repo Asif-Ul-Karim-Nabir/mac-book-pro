@@ -60,3 +60,23 @@ document.getElementById('free-delivery-cost').addEventListener('click', function
 document.getElementById('premium-delivery-cost').addEventListener('click', function () {
     updateMemoryCost('delivery', 20, false);
 })
+// apply promo code for discount total 
+// get discount
+function getDiscount() {
+    const promoInput = document.getElementById('promo-code-input');
+    const promoCode = promoInput.value;
+    promoInput.value = ''
+    return promoCode;
+}
+// get promo discount
+function getPromoDiscount() {
+    const promoCode = getDiscount()
+    const total = document.getElementById('discount-amount');
+    const totalValue = total.innerText;
+    if (promoCode == 'stevekaku') {
+        const discount = totalValue * 0.2;
+        const newDiscount = totalValue - discount;
+        total.innerText = newDiscount;
+        document.getElementById('promo-code-button').disabled = true;
+    }
+}

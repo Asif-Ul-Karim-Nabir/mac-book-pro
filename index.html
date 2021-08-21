@@ -64,9 +64,12 @@
                             <h4 class="font-bold mb-2">Delivery Charge</h4>
                             <hr>
                             <h4 class="font-bold mb-2">Total Price</h4>
-                            <p class="font-semibold">Add Promo code</p>
-                            <input class="border border-gray-400 rounded mb-2" type="text"><br>
-                            <button class="border bg-red-600 px-4 py-2 rounded text-white">Apply</button>
+                            <hr>
+                            <p class="font-semibold mt-4">Add Promo code</p>
+                            <input id="promo-code-input" class="border border-gray-400 rounded mb-2 px-3 py-1"
+                                type="text"><br>
+                            <button id="promo-code-button" onclick="getPromoDiscount()"
+                                class="border bg-red-600 px-3 py-2 rounded text-white">Apply</button>
 
                         </div>
                         <div>
@@ -79,6 +82,7 @@
                             <h4 class="font-bold mb-2">$<span id="delivery-cost">0</span></h4>
                             <hr>
                             <h4 class="font-bold mb-2">$<span id="total-amount">1299</span></h4>
+                            <hr>
                         </div>
                     </div>
                 </div>
