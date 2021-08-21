@@ -12,6 +12,7 @@ function updateMemoryCost(product, price, isAdd) {
     // update total 
     updateTotal()
 }
+// total amount section 
 // get total 
 function getTotal(price) {
     const total = document.getElementById(price + '-cost');
@@ -36,7 +37,7 @@ document.getElementById('8gb-cost').addEventListener('click', function () {
 })
 // 16gb cost 
 document.getElementById('16gb-cost').addEventListener('click', function () {
-    updateMemoryCost('extra-memory', 80, false);
+    updateMemoryCost('extra-memory', 180, false);
 })
 // storage extra cost section 
 // 256gb storage cost 
