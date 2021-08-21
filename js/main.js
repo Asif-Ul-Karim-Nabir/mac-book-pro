@@ -1,5 +1,5 @@
 
-// update memory cost 
+// update extra product cost 
 function updateMemoryCost(product, price, isAdd) {
     const extraProduct = document.getElementById(product + '-cost');
     let extraProductCost = extraProduct.innerText;
@@ -9,8 +9,25 @@ function updateMemoryCost(product, price, isAdd) {
         extraProductCost = price;
     }
     extraProduct.innerText = extraProductCost;
-    // const totalAmount = document.getElementById('total-amount');
-    // totalAmount.innerText = 
+    // update total 
+    updateTotal()
+}
+// get total 
+function getTotal(price) {
+    const total = document.getElementById(price + '-cost');
+    const allTotal = parseInt(total.innerText);
+    return allTotal;
+}
+// update total amount
+function updateTotal() {
+    const unchangedBestPrice = getTotal('unchanged')
+    const extraMemory = getTotal('extra-memory');
+    const extraStorage = getTotal('extra-storage');
+    const extraDelivery = getTotal('delivery');
+    const total = unchangedBestPrice + extraMemory + extraStorage + extraDelivery;
+    document.getElementById('total-amount').innerText = total
+    const disountTotal = unchangedBestPrice + extraMemory + extraStorage + extraDelivery;
+    document.getElementById('discount-amount').innerText = disountTotal
 }
 // memory extra cost section 
 // 8gb cost 
@@ -39,7 +56,7 @@ document.getElementById('1tb-ssd-cost').addEventListener('click', function () {
 document.getElementById('free-delivery-cost').addEventListener('click', function () {
     updateMemoryCost('delivery', 0, true);
 })
-// quick delivery
+// premium quick delivery
 document.getElementById('premium-delivery-cost').addEventListener('click', function () {
     updateMemoryCost('delivery', 20, false);
 })
